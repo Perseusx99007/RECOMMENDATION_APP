@@ -68,6 +68,11 @@ const movieDataBase = {
 var a = [songDataBase, bookDataBase, movieDataBase];
 
 export default function App() {
+  let [selectedType, setType] = useState("");
+  function generateClickHandler(type) {
+    setType(type);
+  }
+
   return (
     <div className="App">
       <h1>💯 ⭐Awesone Recommendations📚</h1>
