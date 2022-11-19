@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import { useState } from "react";
 
-const bookDataBase = {
+const Books = {
   coding: [
     { name: "Eloquent JavaScript", author: "Marijn Haverbeke" },
     { name: "Seven Languages in Seven Weeks", author: "Bruce Tate" },
@@ -25,7 +25,7 @@ const bookDataBase = {
   ]
 };
 
-const songDataBase = {
+const Songs = {
   rock: [
     { name: "One  Moe Light", singer: "Linkin Park" },
     { name: "Stars", singer: "Skillet" },
@@ -45,7 +45,7 @@ const songDataBase = {
   ]
 };
 
-const movieDataBase = {
+const Movies = {
   action: [
     { name: "Marvel Avengers Series", director: "Anthony & Joe Russo" },
     { name: "Justice League", director: "Zack Snyder" },
@@ -65,18 +65,68 @@ const movieDataBase = {
   ]
 };
 
-var a = [songDataBase, bookDataBase, movieDataBase];
+var dataBase = { Books, Songs, Movies };
 
 export default function App() {
   let [selectedType, setType] = useState("");
-  function generateClickHandler(type) {
+  let [subType, setSubType] = useState("");
+  let [dataBase2, setDataBase2] = useState("");
+
+  function typeClickHandler(type) {
     setType(type);
+    if (selectedType !== "") {
+      console.log(Object.keys(dataBase[selectedType]));
+    }
+  }
+
+  function subTypeClickHandler(type2) {
+    setSubType(type2);
+    if (selectedType !== "") {
+      setDataBase2(Object.keys(dataBase[selectedType]));
+      console.log(Object.keys(dataBase[selectedType]));
+    }
   }
 
   return (
     <div className="App">
       <h1>💯 ⭐Awesone Recommendations📚</h1>
       <h2>Checkout my favorite books. Select a genre to get started</h2>
+      <div>
+        {Object.keys(dataBase).map((type) => (
+          <button
+            onClick={() => typeClickHandler(type)}
+            key={type}
+            style={{
+              cursor: "pointer",
+              background: "#E5E7EB",
+              borderRadius: "0.5rem",
+              padding: "0.5rem  1rem",
+              border: "1px solid black",
+              margin: "1rem 0.3rem"
+            }}
+          >
+            {type}
+          </button>
+        ))}
+      </div>
+      <div>
+        {Object.keys(dataBase2).map((type2) => (
+          <button
+            onClick={() => subTypeClickHandler(type2)}
+            key={type2}
+            style={{
+              cursor: "pointer",
+              background: "#E5E7EB",
+              borderRadius: "0.5rem",
+              padding: "0.5rem  1rem",
+              border: "1px solid black",
+              margin: "1rem 0.3rem"
+            }}
+          >
+            {type2}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
