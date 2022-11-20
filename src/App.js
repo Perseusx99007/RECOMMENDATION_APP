@@ -147,32 +147,34 @@ export default function App() {
               padding: "0.5rem  1rem",
               border: "1px solid black",
               margin: "1rem 0.3rem"
-            }}
-          >
-            {type2}
-          </button>
         ))}
       </div>
       <hr />
       <div style={{ textAlign: "left" }}>
         <ul style={{ paddingInlineStart: "0" }}>
-          {Object.keys(dataBase2[selectedType2]).map((option) => (
-            <li
-              key={option.name}
-              style={{
-                listStyle: "none",
-                padding: "1rem",
-                border: "1px solid #D1D5DB",
-                width: "70%",
-                margin: "1rem 0rem",
-                borderRadius: "0.5rem"
-              }}
-            >
-              {" "}
-              <div style={{ fontSize: "larger" }}> {option.name} </div>
-              <div style={{ fontSize: "smaller" }}> {option.rating} </div>
-            </li>
-          ))}
+          {selectedType !== "" &&
+            selectedType2 !== "" &&
+            Object.keys(dataBase2[selectedType2]).map((option) => (
+              <li
+                key={option}
+                style={{
+                  listStyle: "none",
+                  padding: "1rem",
+                  border: "1px solid #D1D5DB",
+                  width: "70%",
+                  margin: "1rem 0rem",
+                  borderRadius: "0.5rem"
+                }}
+              >
+                {" "}
+                <div style={{ fontSize: "larger" }}> {option.name} </div>
+                <div style={{ fontSize: "smaller" }}>
+                  {" "}
+                  {option.contributor}{" "}
+                </div>
+                {option}
+              </li>
+            ))}
         </ul>
       </div>
     </div>
