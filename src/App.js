@@ -71,6 +71,7 @@ export default function App() {
   let [selectedType, setType] = useState("");
   let [dataBase2, setDataBase2] = useState("");
   let [selectedType2, setType2] = useState("");
+
   function typeClickHandler(type) {
     setType(type);
     // if (selectedType !== "") {
@@ -78,6 +79,7 @@ export default function App() {
     //   console.log(dataBase2);
     //   console.log(Object.keys(dataBase[selectedType]));
     // }
+    console.log(selectedType);
     if (type === "Books") {
       setDataBase2(Books);
       console.log(Books);
@@ -95,7 +97,6 @@ export default function App() {
   function genreClickHandler(type2) {
     // setDataBase2(typeClickHandler(selectedType));
     setType2(type2);
-    setType(selectedType2);
     console.log(selectedType2);
     console.log(dataBase2[selectedType2]);
 
@@ -147,6 +148,10 @@ export default function App() {
               padding: "0.5rem  1rem",
               border: "1px solid black",
               margin: "1rem 0.3rem"
+            }}
+          >
+            {type2}
+          </button>
         ))}
       </div>
       <hr />
