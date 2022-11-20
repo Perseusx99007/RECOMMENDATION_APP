@@ -74,12 +74,13 @@ export default function App() {
 
   function typeClickHandler(type) {
     setType(type);
+    setType2("");
     // if (selectedType !== "") {
     //   dataBase2 = Object.keys(dataBase[selectedType]);
     //   console.log(dataBase2);
     //   console.log(Object.keys(dataBase[selectedType]));
     // }
-    console.log(selectedType);
+    console.log(type);
     if (type === "Books") {
       setDataBase2(Books);
       console.log(Books);
@@ -97,8 +98,8 @@ export default function App() {
   function genreClickHandler(type2) {
     // setDataBase2(typeClickHandler(selectedType));
     setType2(type2);
-    console.log(selectedType2);
-    console.log(dataBase2[selectedType2]);
+    console.log(type2);
+    console.log(dataBase2[type2]);
 
     // if (typeClickHandler(selectedType) === "Books") {
     //   setDataBase2(Books);
@@ -159,9 +160,9 @@ export default function App() {
         <ul style={{ paddingInlineStart: "0" }}>
           {selectedType !== "" &&
             selectedType2 !== "" &&
-            Object.keys(dataBase2[selectedType2]).map((option) => (
+            dataBase2[selectedType2].map((option) => (
               <li
-                key={option}
+                key={option.name}
                 style={{
                   listStyle: "none",
                   padding: "1rem",
@@ -177,7 +178,6 @@ export default function App() {
                   {" "}
                   {option.contributor}{" "}
                 </div>
-                {option}
               </li>
             ))}
         </ul>
