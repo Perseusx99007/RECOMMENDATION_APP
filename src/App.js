@@ -118,7 +118,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>💯 ⭐Awesone Recommendations📚</h1>
-      <h2>Checkout my favorite books. Select a genre to get started</h2>
+      <h2>Select a genre to get started</h2>
       <div>
         {Object.keys(dataBase).map((type) => (
           <button
@@ -174,6 +174,7 @@ export default function App() {
               >
                 {" "}
                 <div style={{ fontSize: "larger" }}> {option.name} </div>
+                <br />
                 <div style={{ fontSize: "smaller" }}>
                   {" "}
                   {option.contributor}{" "}
