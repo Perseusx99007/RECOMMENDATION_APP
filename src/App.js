@@ -172,7 +172,7 @@ export default function App() {
                   listStyle: "none",
                   padding: "1rem",
                   border: "1px solid #D1D5DB",
-                  width: "70%",
+                  width: "95%",
                   margin: "1rem 0rem",
                   borderRadius: "0.5rem"
                 }}
