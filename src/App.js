@@ -65,7 +65,7 @@ const Movies = {
   ]
 };
 
-var dataBase = { Books, Songs, Movies };
+const dataBase = { Books, Songs, Movies };
 
 export default function App() {
   let [selectedType, setType] = useState("");
@@ -118,20 +118,24 @@ export default function App() {
   return (
     <div className="App">
       <h1>💯 ⭐Awesone Recommendations📚</h1>
-      <h2>Select a genre to get started</h2>
+      <br />
+      <p> Checkout my favorite books. Select a genre to get started </p>
+      <br />
+      <br />
       <div>
         {Object.keys(dataBase).map((type) => (
           <button
+            className="button"
             onClick={() => typeClickHandler(type)}
             key={type}
-            style={{
-              cursor: "pointer",
-              background: "#E5E7EB",
-              borderRadius: "0.5rem",
-              padding: "0.5rem  1rem",
-              border: "1px solid black",
-              margin: "1rem 0.3rem"
-            }}
+            // style={{
+            //   cursor: "pointer",
+            //   background: "#E5E7EB",
+            //   borderRadius: "0.5rem",
+            //   padding: "0.5rem  1rem",
+            //   border: "1px solid black",
+            //   margin: "1rem 0.3rem"
+            // }}
           >
             {type}
           </button>
@@ -140,16 +144,17 @@ export default function App() {
       <div>
         {Object.keys(dataBase2).map((type2) => (
           <button
+            className="button"
             onClick={() => genreClickHandler(type2)}
             key={type2}
-            style={{
-              cursor: "pointer",
-              background: "#E5E7EB",
-              borderRadius: "0.5rem",
-              padding: "0.5rem  1rem",
-              border: "1px solid black",
-              margin: "1rem 0.3rem"
-            }}
+            // style={{
+            //   cursor: "pointer",
+            //   background: "#E5E7EB",
+            //   borderRadius: "0.5rem",
+            //   padding: "0.5rem  1rem",
+            //   border: "1px solid black",
+            //   margin: "1rem 0.3rem"
+            // }}
           >
             {type2}
           </button>
