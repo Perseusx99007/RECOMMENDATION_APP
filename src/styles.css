@@ -20,12 +20,12 @@ body {
 
 .button:hover {
   background-color: #000000;
-  transition: 0.7s;
+  transition: 1s;
   color: white;
 }
 
 .button:focus {
   background-color: #000000;
-  transition: 0.7s;
+  transition: 1s;
   color: white;
 }
